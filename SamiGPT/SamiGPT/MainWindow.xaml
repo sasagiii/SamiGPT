@@ -10,28 +10,39 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    
-    <Grid>
+
+    <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="35"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Rectangle Grid.Row="0" Fill="Red" MouseLeftButtonDown="dragWindow"/>
-        <TextBlock Text="Sami GPT" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="Black" />
-        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" >
-            <Button Content="🗕" Name="minimize" Width="25" Height="25" HorizontalAlignment="Right" Click="minimize_Click"/>
-            <Button Content="🗖" Name="minMax" Width="25" Height="25" HorizontalAlignment="Right" Click="minMax_Click"/>
-            <Button Content="X" Name="close" Width="25" Height="25" HorizontalAlignment="Right" Click="close_Click"/>
+        <Rectangle Grid.Row="0" Fill="#202020" MouseLeftButtonDown="dragWindow"/>
+        <TextBlock Text="Sami GPT" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="White" />
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,15,0">
+            <Menu x:Name="showMenu" Background="#130314" Foreground="White" Width="8" Height="30" BorderThickness="0">
+                <MenuItem Header="" Background="#130314" Width="8" Height="30">
+                    <MenuItem Header="X  Close" Click="close_Click" Background="#130314" BorderThickness="0"/>
+                    <MenuItem Header="🗖 minMax" Click="minMax_Click" Background="#130314" BorderThickness="0"/>
+                    <MenuItem Header="🗕 Minimize" Click="minimize_Click" Background="#130314" BorderThickness="0"/>
+                </MenuItem>
+            </Menu>
         </StackPanel>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" ShowGridLines="False">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25*"/>
                 <ColumnDefinition Width="75*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Column="0" Fill="Blue"/>
+
+            <Border BorderBrush="#666666" BorderThickness="2" >
+            <Rectangle Grid.Column="0" Fill="#202020"/>
+            </Border>
+
             <TextBlock Text="SETTINGS AND dis" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="Black" />
-            <Rectangle Grid.Column="1" Fill="Yellow"/>
+            <Border Grid.Column="1" BorderBrush="#666666" BorderThickness="2" >
+                <Rectangle Grid.Column="1" Fill="#202020"/>
+            </Border>
             <TextBlock Grid.Column="1" Text="actual disc" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="Black" />
             <GridSplitter Grid.Column="1" 
               Grid.RowSpan="3" 

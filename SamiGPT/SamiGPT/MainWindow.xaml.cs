@@ -1,13 +1,10 @@
 ﻿
-using System;
+
 using System.Windows;
 
 
 namespace SamiGPT
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -36,5 +33,6 @@ namespace SamiGPT
         {
             WindowState = WindowState.Minimized;
         }
+
     }
 }
